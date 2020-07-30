@@ -1,4 +1,4 @@
-# immoscout
+# Immoscout
  
 Immoscout can be used for parsing [immobilienscout24.de](https://immobilienscout24.de) and sending a mail from yourself to yourself (and others) with new listings.
 
@@ -8,7 +8,7 @@ Customize the file [immoscout.py](https://github.com/Jonass-K/immoscout/blob/mas
 
 14. `my_mail = ''`
 
-15. `to_mail = ''`
+15. `to_mail = ['']`
 
 16. `smtp_host = ''`
 
