@@ -1,8 +1,8 @@
 # immoscout
  
-Immoscout can be used for parsing immobilienscout24.de and sending a mail from yourself to yourself (and others) with new listings.
+Immoscout can be used for parsing [immobilienscout24.de](https://immobilienscout24.de) and sending a mail from yourself to yourself (and others) with new listings.
 
-*immowelt.de and ebay-kleinanzeigen.de will be added soon.*
+*[immowelt.de](https://immowelt.de) and [ebay-kleinanzeigen.de](https://ebay-kleinanzeigen.de) will be added soon.*
 
 Customize the file [immoscout.py](https://github.com/Jonass-K/immoscout/blob/master/immoscout.py) by adding your mail-address, your smtp host & port and how often the site gets checked (line 14-18): 
 
