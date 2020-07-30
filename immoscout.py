@@ -18,19 +18,18 @@ smtp_port = 0
 msg = MIMEMultipart()
 msg['From'] = my_mail
 msg['To'] = to_mail
-usage = 'usage: immoscout.py <state> <city> <room> <price>'
+usage = 'usage: "immoscout.py <state> <city> <room> <price>" or "immoscout.py <url>" '
 
-if len(sys.argv) != 5:
+if len(sys.argv) == 5:
+    url = 'https://www.immobilienscout24.de/Suche/de/' + sys.argv[1] + '/' + sys.argv[2] + '/' + \
+        sys.argv[3] + '-zimmer-wohnung-mieten?price=-' + \
+        sys.argv[4] + '.0&enteredFrom=result_list#/'
+elif len(sys.argv) == 2:
+    url = sys.argv[1].replace('"', '')   
+else:
     print(usage)
     sys.exit()
 
-state = sys.argv[1]
-city = sys.argv[2]
-room = sys.argv[3]
-price = sys.argv[4]
-url = 'https://www.immobilienscout24.de/Suche/de/' + state + '/' + city + '/' + \
-    room + '-zimmer-wohnung-mieten?price=-' + \
-    price + '.0&enteredFrom=result_list#/'
 my_password = getpass()
 
 k = 0
@@ -47,7 +46,8 @@ while True:
 
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    results = soup.find_all('a', 'result-list-entry__brand-title-container')
+    results = soup.find('ul', id='resultListItems')
+    results = results.find_all('a', 'result-list-entry__brand-title-container')
     new_apartements.append(['Title', 'Id', 'Link', 'Old/New'])
 
     for result in results:
