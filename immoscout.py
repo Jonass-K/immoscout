@@ -12,9 +12,9 @@ from bs4 import BeautifulSoup
 from getpass import getpass
 
 my_mail = ''
-to_mail = ''
+to_mail = ['']
 smtp_host = ''
-smtp_port = 0
+smtp_port = 587
 sleep_time = 60*60*8
 
 msg = MIMEMultipart()
@@ -97,6 +97,7 @@ while True:
         server.starttls()
         server.login(my_mail, my_password)
         text = msg.as_string()
-        server.sendmail(my_mail, to_mail, text)
+        for mail in to_mail:
+            server.sendmail(my_mail, mail, text)
         server.quit()
     k += 1
