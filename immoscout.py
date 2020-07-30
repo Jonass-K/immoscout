@@ -15,6 +15,8 @@ my_mail = ''
 to_mail = ''
 smtp_host = ''
 smtp_port = 0
+sleep_time = 60*60*8
+
 msg = MIMEMultipart()
 msg['From'] = my_mail
 msg['To'] = to_mail
@@ -42,7 +44,7 @@ while True:
 
     # sleep for 8 hours
     if k != 0:
-        time.sleep(60*60*8)
+        time.sleep(sleep_time)
 
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
