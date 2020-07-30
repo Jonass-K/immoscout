@@ -4,7 +4,7 @@ Immoscout can be used for parsing [immobilienscout24.de](https://immobilienscout
 
 *[immowelt.de](https://immowelt.de) and [ebay-kleinanzeigen.de](https://ebay-kleinanzeigen.de) will be added soon.*
 
-Customize the file [immoscout.py](https://github.com/Jonass-K/immoscout/blob/master/immoscout.py) by adding your mail-address, your smtp host & port and how often the site gets checked (line 14-18): 
+Customize the file [immoscout.py](https://github.com/Jonass-K/immoscout/blob/master/immoscout.py) by adding your e-mail-address, your smtp host & port and how often the site gets checked (line 14-18): 
 
 14. `my_mail = ''`
 
@@ -16,6 +16,20 @@ Customize the file [immoscout.py](https://github.com/Jonass-K/immoscout/blob/mas
 
 18. `sleep_time = 60*60*8`
 
-**Usage:** 
- * `immoscout.py <state> <city> <rooms> <max_price>`
- * `immoscout.py <url>`
+**Usage:**
+* `immoscout.py <state> <city> <rooms> <max_price>`
+* `immoscout.py <url>`
+
+**Usual e-mail-providers:**
+* Outlook: 
+    * SMTP-Server: smtp.office365.com
+    * SMTP-Port: 587
+* Gmail:
+    * SMTP-Server: smtp.gmail.com
+    * SMTP-Port: 587
+* GMX:
+    * SMTP-Server: mail.gmx.net
+    * SMTP-Port: 587
+* Web:
+    * SMTP-Server: smtp.web.de
+    * SMTP-Port: 587
